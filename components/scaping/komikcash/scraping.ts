@@ -17,14 +17,14 @@ import { TypeRecommend } from "components/type/recommendType";
 const dev = process.env.NODE_ENV !== "production";
 
 export const HandlerKomikId = async (kid: any) => {
-  const link_endpoint = "https://komikcast.lol/komik";
+  const link_endpoint = "https://komikcast.cz/komik";
   const link_endpoin =
-    "https://komikcast.lol/komik/?3a24865d44=34bc35bc9a&9d047e76e1=5a0ad9215b&6baa5a75ed=4893b65c36&dd91d164d6=daad574380&7328157bb0=277750332e&fbclid=IwAR1BfHI7WDlJA_KQopLNRwuCKMU26DmvlmZJFU1-zkZr3yNNOKPmR9SVJA8";
-  const chapter_link = "https://komikcast.lol/chapter/";
+    "https://komikcast.cz/komik/?3a24865d44=34bc35bc9a&9d047e76e1=5a0ad9215b&6baa5a75ed=4893b65c36&dd91d164d6=daad574380&7328157bb0=277750332e&fbclid=IwAR1BfHI7WDlJA_KQopLNRwuCKMU26DmvlmZJFU1-zkZr3yNNOKPmR9SVJA8";
+  const chapter_link = "https://komikcast.cz/chapter/";
   let endpoint = kid;
 
   const data = await fetch(
-    `https://komikcast.lol/komik/${endpoint}?3a24865d44=34bc35bc9a&9d047e76e1=5a0ad9215b&6baa5a75ed=4893b65c36&dd91d164d6=daad574380&7328157bb0=277750332e&fbclid=IwAR1BfHI7WDlJA_KQopLNRwuCKMU26DmvlmZJFU1-zkZr3yNNOKPmR9SVJA8`
+    `https://komikcast.cz/komik/${endpoint}?3a24865d44=34bc35bc9a&9d047e76e1=5a0ad9215b&6baa5a75ed=4893b65c36&dd91d164d6=daad574380&7328157bb0=277750332e&fbclid=IwAR1BfHI7WDlJA_KQopLNRwuCKMU26DmvlmZJFU1-zkZr3yNNOKPmR9SVJA8`
   ).then((res) => res.text());
 
   const $ = cheerio.load(data);
@@ -193,10 +193,10 @@ export const HandleRecommend = async () => {
 
 export const HandleKomikList = async () => {
   try {
-    const link_endpoint = "https://komikcast.lol/komik/";
-    const chapter_link_endpoint = "https://komikcast.lol/chapter/";
+    const link_endpoint = "https://komikcast.cz/komik/";
+    const chapter_link_endpoint = "https://komikcast.cz/chapter/";
 
-    const data = await fetch(`https://komikcast.lol/daftar-komik/`).then(
+    const data = await fetch(`https://komikcast.cz/daftar-komik/`).then(
       (res) => res.text()
     );
 
@@ -261,8 +261,8 @@ export const HandleKomikList = async () => {
 };
 
 export const HandleKomikChapterId = async (cid: any) => {
-  const link_endpoint = "https://komikcast.lol/komik/";
-  const chapter_link = "https://komikcast.lol/chapter/";
+  const link_endpoint = "https://komikcast.cz/komik/";
+  const chapter_link = "https://komikcast.cz/chapter/";
 
   try {
     const data = await fetch(`${chapter_link}/${cid}/`).then((res) =>
