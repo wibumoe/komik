@@ -4,8 +4,8 @@ import { GenreList, GenreType } from "components/type/genreType";
 
 export const getGenre = async () => {
   try {
-    const link_genre_endpoint = "https://komikcast.site/genres/";
-    const data = await fetch(`https://komikcast.site/`).then((res) =>
+    const link_genre_endpoint = "https://komikcast.cz/genres/";
+    const data = await fetch(`https://komikcast.cz/`).then((res) =>
       res.text()
     );
     const $ = cheerio.load(data);
@@ -46,9 +46,9 @@ export const getGenreList = async (id: any) => {
   console.log(id);
 
   try {
-    // const link_genre_endpoint = 'https://komikcast.site/genres'
-    const komik_endpoint = "https://komikcast.site/komik/";
-    const data = await fetch(`https://komikcast.site/genres/${id}`).then(
+    // const link_genre_endpoint = 'https://komikcast.cz/genres'
+    const komik_endpoint = "https://komikcast.cz/komik/";
+    const data = await fetch(`https://komikcast.cz/genres/${id}`).then(
       (res) => res.text()
     );
     // console.log(data);
