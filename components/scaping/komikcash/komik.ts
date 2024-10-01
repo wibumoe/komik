@@ -7,10 +7,10 @@ import {
 
 export const getListPage = async (id: any) => {
   try {
-    const link_endpoint = "https://komikcast.site/komik/";
-    const chapter_link_endpoint = "https://komikcast.site/chapter/";
+    const link_endpoint = "https://komikcast.cz/komik/";
+    const chapter_link_endpoint = "https://komikcast.cz/chapter/";
     const data = await fetch(
-      `https://komikcast.site/daftar-komik/page/${id}`
+      `https://komikcast.cz/daftar-komik/page/${id}`
     ).then((res) => res.text());
     const $ = cheerio.load(data);
     const element = $(".list-update");
@@ -73,9 +73,9 @@ export const getListPage = async (id: any) => {
 
 export const getListText = async () => {
   try {
-    const link_endpoint = "https://komikcast.site/komik/";
-    const chapter_link_endpoint = "https://komikcast.site/chapter/";
-    const data = await fetch(`https://komikcast.site/daftar-komik/?list`).then(
+    const link_endpoint = "https://komikcast.cz/komik/";
+    const chapter_link_endpoint = "https://komikcast.cz/chapter/";
+    const data = await fetch(`https://komikcast.cz/daftar-komik/?list`).then(
       (res) => res.text()
     );
     const $ = cheerio.load(data);
