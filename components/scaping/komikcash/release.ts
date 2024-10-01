@@ -3,9 +3,9 @@ import { TypeChapterList, TypeReleaseList } from "components/type/releaseType";
 
 export const getLastRelease = async () => {
   try {
-    const link_komik_endpoint = "https://komikcast.site/komik/";
-    const link_chapter_endpoint = "https://komikcast.site/chapter/";
-    const data = await fetch(`https://komikcast.site/`).then((res) =>
+    const link_komik_endpoint = "https://komikcast.cz/komik/";
+    const link_chapter_endpoint = "https://komikcast.cz/chapter/";
+    const data = await fetch(`https://komikcast.cz/`).then((res) =>
       res.text()
     );
     const $ = cheerio.load(data);
